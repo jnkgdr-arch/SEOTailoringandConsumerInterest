@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coleman SEO Executive Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav>
+      <span class="brand">Coleman SEO Intelligence</span>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#strategy">Strategy</a>
+      <a href="#feedback">Customer Feedback Loop</a>
+      <a href="#recommendations">Recommendations</a>
+    </nav>
+    <section class="hero-grid">
+      <div>
+        <p class="eyebrow">MRKT 354 Integrated Marketing Communications Analysis | Janelle Gardner</p>
+        <h1>Top 7 camping keywords translated into actionable growth for Coleman.</h1>
+        <p class="hero-copy">This executive dashboard turns the SEO paper into a visual, interactive decision tool: compare search demand, bid cost, competitive pressure, and customer fit to decide where Coleman should tailor paid search, display ads, organic content, and customer-feedback-driven campaigns.</p>
+        <div class="hero-actions">
+          <button id="focusHighIntent">Highlight high-intent searches</button>
+          <button id="resetView" class="secondary">Reset dashboard</button>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <span>Priority insight</span>
+        <strong>Coleman Tents</strong>
+        <p>+900% three-month change signals a near-term opportunity for branded search capture and retargeting.</p>
+      </aside>
+    </section>
+  </header>
+
+  <main id="dashboard">
+    <section class="kpi-grid" aria-label="Executive KPIs">
+      <article class="kpi"><span>Keywords studied</span><strong>7</strong><small>Top Coleman-relevant searches</small></article>
+      <article class="kpi"><span>High competition terms</span><strong>6</strong><small>Require precise ad copy and landing pages</small></article>
+      <article class="kpi"><span>Largest demand band</span><strong>100K–1M</strong><small>Camping Tents</small></article>
+      <article class="kpi"><span>Lowest bid floor</span><strong>$0.24</strong><small>Outdoors Equipment</small></article>
+    </section>
+
+    <section class="panel controls-panel">
+      <div>
+        <p class="eyebrow">Interactive controls</p>
+        <h2>Tailor the view to Coleman's marketing objective</h2>
+      </div>
+      <label>Sort keywords
+        <select id="sortSelect">
+          <option value="demand">Demand potential</option>
+          <option value="growth">Three-month growth</option>
+          <option value="lowBid">Lowest low-range bid</option>
+          <option value="highBid">Highest high-range bid</option>
+        </select>
+      </label>
+      <label>Customer segment
+        <select id="segmentSelect">
+          <option value="families">Family campers</option>
+          <option value="deal">Deal seekers</option>
+          <option value="brand">Brand loyalists</option>
+          <option value="new">New outdoor shoppers</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="chart-grid">
+      <article class="panel wide">
+        <div class="section-heading">
+          <div><p class="eyebrow">Graph</p><h2>Search opportunity score by keyword</h2></div>
+          <p>Demand bands are converted to midpoint estimates so Coleman can compare relative opportunity.</p>
+        </div>
+        <div id="barChart" class="bar-chart" role="img" aria-label="Bar chart comparing keyword opportunity"></div>
+      </article>
+      <article class="panel">
+        <div class="section-heading"><div><p class="eyebrow">Bid diagram</p><h2>Top-of-page bid range</h2></div></div>
+        <div id="bidChart" class="bid-chart"></div>
+      </article>
+      <article class="panel">
+        <div class="section-heading"><div><p class="eyebrow">Funnel</p><h2>How search becomes revenue</h2></div></div>
+        <ol class="funnel">
+          <li><strong>Keyword intent</strong><span>Customer searches for tents, gear, sales, or Coleman by name.</span></li>
+          <li><strong>Ad or organic result</strong><span>Paid search, display ads, and organic pages answer that intent.</span></li>
+          <li><strong>Tailored landing page</strong><span>Product, offer, and content match the keyword and customer segment.</span></li>
+          <li><strong>Feedback capture</strong><span>Reviews, clicks, surveys, and sales data refine the next campaign.</span></li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="panel table-panel">
+      <div class="section-heading">
+        <div><p class="eyebrow">Top 7 keyword searches</p><h2>Keyword data table</h2></div>
+        <p>Click a row to update the recommendation card.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Keyword</th><th>Average monthly searches</th><th>Three-Month Change</th><th>YoY change</th><th>Competition</th><th>Top of Page Bid (Low Range)</th><th>Top of Page Bid (High Range)</th></tr>
+          </thead>
+          <tbody id="keywordRows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="strategy" class="strategy-grid">
+      <article class="panel recommendation-card">
+        <p class="eyebrow">Selected keyword analysis</p>
+        <h2 id="selectedKeyword">Camping Tents</h2>
+        <p id="selectedInsight"></p>
+        <div class="mini-metrics" id="selectedMetrics"></div>
+      </article>
+      <article class="panel">
+        <p class="eyebrow">Marketing channel mix</p>
+        <h2>Use each search type for a different job</h2>
+        <div class="channel-stack">
+          <div><strong>Display ads</strong><span>Build awareness with visual banners, widgets, and videos targeted by location, interest, and browsing behavior.</span></div>
+          <div><strong>Paid search ads</strong><span>Win near-purchase intent when exact Coleman product and camping phrases match ad groups.</span></div>
+          <div><strong>Organic search</strong><span>Earn durable visibility with relevant tent guides, equipment checklists, reviews, and comparison content.</span></div>
+        </div>
+      </article>
+      <article class="panel wide">
+        <p class="eyebrow">Tailoring framework</p>
+        <h2>How Coleman can benefit by choosing customer-matched keywords</h2>
+        <div class="matrix">
+          <div><b>High demand + high competition</b><span>Use precise ad groups for “Camping Tents,” “Camping Equipment,” and “Sale on Tents” so spending is concentrated where customer intent is strongest.</span></div>
+          <div><b>Branded growth signal</b><span>Use “Coleman Tents” to defend brand traffic, upsell accessories, and retarget shoppers already familiar with Coleman.</span></div>
+          <div><b>Declining or ambiguous terms</b><span>Monitor “Outdoors Tents” because the -90% YoY change suggests Coleman should test copy before scaling spend.</span></div>
+          <div><b>Niche discovery</b><span>Use “Outdoors Accommodations” for content experiments, not major paid spend, because demand is small and bids are unavailable.</span></div>
+        </div>
+      </article>
+    </section>
+
+    <section id="feedback" class="panel feedback-panel">
+      <div>
+        <p class="eyebrow">Customer feedback loop</p>
+        <h2>Turn searches, clicks, and comments into better marketing decisions</h2>
+        <p>Coleman should combine keyword performance with customer feedback: search terms show what shoppers ask for, while reviews, surveys, service chats, and product ratings explain why they buy or leave. The best campaigns connect both sources.</p>
+      </div>
+      <div class="loop-diagram">
+        <div>Search data</div><span>→</span><div>Customer feedback</div><span>→</span><div>Tailored campaign</div><span>→</span><div>Measured results</div>
+      </div>
+      <ul class="decision-list">
+        <li>Increase paid bids when high-intent keywords produce clicks, conversions, and positive customer comments.</li>
+        <li>Rewrite landing pages when customers search for tents but ask reviews about setup time, family size, or weather protection.</li>
+        <li>Shift budget from broad display ads to paid search when exact-match terms outperform awareness impressions.</li>
+        <li>Use organic content to answer recurring questions and reduce dependence on paid top-of-page bidding.</li>
+      </ul>
+    </section>
+
+    <section id="recommendations" class="panel recommendations-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Recommendations</p>
+          <h2>Action plan for turning keyword analysis into Coleman sales growth</h2>
+        </div>
+        <p>Use these recommendations after reviewing the graph, bid ranges, and customer feedback loop.</p>
+      </div>
+      <div class="recommendation-grid">
+        <article>
+          <span>01</span>
+          <h3>Tailor keywords to customer feedback and needs</h3>
+          <p>Connect search terms with review themes, surveys, and sales conversations so Coleman can increase sales and feel more relatable to what shoppers are looking for in a product.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Promote products around the reason behind the search</h3>
+          <p>When customers search for tents, explain the buying motive: more durability than other brands, longer pole lengths, waterproof materials, included accessories, setup speed, and family comfort.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Choose paid search words wisely</h3>
+          <p>Do not buy every keyword at once. Too many paid terms can dilute budget potency and cause Coleman to fall below top competitors on the words that matter most.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <h3>Use low-bid and low-competition searches strategically</h3>
+          <p>Turn less-searched or lower-competition keywords into niche campaigns for different target audiences, such as first-time campers, budget shoppers, or specialized outdoor groups.</p>
+        </article>
+        <article>
+          <span>05</span>
+          <h3>Assess geography and audience search differences</h3>
+          <p>Compare regions to see how audiences search for Coleman versus competitor products, then adjust ads and landing pages by local outdoor needs, seasonality, and store availability.</p>
+        </article>
+        <article>
+          <span>06</span>
+          <h3>Pair high- and low-competition keywords when trends overlap</h3>
+          <p>If a customer group combines a highly competitive term with a lower-competition phrase, test both together in ad copy and landing pages, then assess conversion before scaling spend.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
